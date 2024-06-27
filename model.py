@@ -22,7 +22,6 @@ class EAST_model(tf.keras.Model):
     text_region_boundary_training_mask = tf.keras.layers.Input(shape=(None, None, 1), name='text_region_boundary_training_mask')
     target_score_map = tf.keras.layers.Input(shape=(None, None, 1), name='target_score_map')
     resnet = tf.keras.applications.ResNet50(input_tensor=input_image, weights='imagenet', include_top=False, pooling=None)
-    x = resnet.get_layer('conv5_block3_out').output
     x = self.fem(384, x)
 
     x = tf.keras.layers.Lambda(resize_bilinear, name='resize_1')(x)
