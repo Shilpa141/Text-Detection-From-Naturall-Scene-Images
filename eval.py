@@ -17,7 +17,7 @@ from absl import flags
 flags.DEFINE_string('gpu_num', default='1', help='gpu number to run')
 flags.DEFINE_string('test_data_path', default='./data/ICDAR2015/test_data', help='test data path')
 flags.DEFINE_string('model_path', default='./east_resnet_50_rbox/', help='trained model saved path')
-flags.DEFINE_string('output_dir', default='./data/ICDAR2015/test_data_output/', help='test data output path')
+flags.DEFINE_string('output_dir', default='Path for output directory', help='test data output path')
 
 FLAGS = flags.FLAGS
 
